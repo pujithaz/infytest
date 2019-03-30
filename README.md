@@ -18,12 +18,13 @@ Run jenkins instance on 49001
 -----------------------------
 
 ~~~
-docker run -d -p 49001:8080 -t infytest
+docker run -d -p 49001:8080 -p 3000:3000 -t infytest
 ~~~
 
 
-Run nodejs app on 3000 (from cmd)
+Run nodejs app on jenkins
 --------------------------------
 ~~~
-docker run -d -p 3000:3000 -e APP_VERSION="${APP_VERSION}" -t infytest node app.js --app_version="${APP_VERSION}" --git_hash=$(git rev-parse --short HEAD) &
+Configure Jenkins pipeline to run the Jenkinsfile located in the repo and build the pipeline.
+Once the pipeline is successfully run the application can be accessed from http://localhost:3000/healthcheck
 ~~~

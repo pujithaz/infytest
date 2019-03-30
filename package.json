@@ -3,21 +3,13 @@
   "version": "1.0.0",
   "description": "Infosys Test",
   "scripts": {
-    "test": "jest",
-    "test:coverage": "jest --coverage --coverageDirectory=output/coverage/jest"
+    "test-jenkins": "JUNIT_REPORT_PATH=report.xml mocha --colors --reporter mocha-jenkins-reporter"
   },
   "dependencies": {
     "express": "^4.16.4",
-    "jest-junit": "^6.3.0"
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
-    "jest": "^23.6.0",
-    "jest-html-reporter": "^2.4.4"
-  },
-  "jest": {
-    "coverageReporters": [
-      "text",
-      "cobertura"
-    ]
+    "mocha-jenkins-reporter": "^0.4.1"
   }
 }
